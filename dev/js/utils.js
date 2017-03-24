@@ -16,6 +16,21 @@ var Utils = (function () {
           el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
     }
 
+    var arrayEquals = function(array, array2) {
+        if (!array || !array2)
+            return false;
+
+        if (array.length != array2.length)
+            return false;
+
+        for (var i = 0, l = array.length; i < l; i++) {
+            if (array[i] != array2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     var fadeOut = function(el,callback) {
         el.style.opacity = 1;
         (function fade() {
@@ -43,6 +58,7 @@ var Utils = (function () {
 		addClass: addClass,
         removeClass: removeClass,
         fadeOut: fadeOut,
+        arrayEquals: arrayEquals,
         fadeIn: fadeIn
 	};
 }());
