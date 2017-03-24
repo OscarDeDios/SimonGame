@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+
+header {
+    height: 85px;
+    padding: 20px 0 1px;
+    background-color: #f3f3f3;
+    background-image: -moz-linear-gradient(top,#ebebeb,#ffffff);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#ebebeb),to(#ffffff));
+    background-image: -webkit-linear-gradient(top,#ebebeb,#ffffff);
+    background-image: -o-linear-gradient(top,#ebebeb,#ffffff);
+    background-image: linear-gradient(to bottom,#ebebeb,#ffffff);
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #C0C0C0;
+
+    img {
+        margin: 0 50px;
+    }
+    h1 {
+        display: inline;
+        font-family: "Yanone Kaffeesatz";
+        font-weight: 400;
+        font-size: 56px;
+        color: #004488;
+        position: relative;
+        bottom: 10px;
+    }
+}
+
+.container {
+    background: linear-gradient(#eaeaea,#bbbbbb);
+    min-height: calc(100% - 130px);
+    margin-bottom: -30px;
+    // background-image: -moz-linear-gradient(top,#7F7F7F,#ffffff);
+    // background-image: -webkit-gradient(linear,0 0,0 100%,from(#7F7F7F),to(#ffffff));
+    // background-image: -webkit-linear-gradient(top,#7F7F7F,#ffffff);
+    // background-image: -o-linear-gradient(top,#7F7F7F,#ffffff);
+    // background-image: linear-gradient(to bottom,#7F7F7F,#ffffff);
+    padding: 0 15px;
+    overflow: auto;
+    &:after {
+        content: "";
+        display: block;
+        height: 30px;
+    }
+}
+
+.game-section {
+    margin: 50px 20px;
+    width: 600px;
+    height: 500px;
+    background-color: white;
+}
+
+.color-target {
+
+}
+
+footer {
+    height: 30px;
+    padding: 20px;
+    background-color: #373737;
+    color: white;
+}
+
+
+li {
+    list-style: none;
+}
