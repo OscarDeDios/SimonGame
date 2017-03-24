@@ -47,11 +47,6 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./dev/css'));
 });
 
-// gulp.task('sass:watch', function () {
-//   gulp.watch('./sass/**/*.scss', ['sass']);
-// });
-
-
 // Build the production code
 gulp.task('build', ['miniJs','minicss','copyFiles']);
 
@@ -65,6 +60,6 @@ gulp.task('dev', function() {
     });
 
 
-    gulp.watch([config.jsDir,config.cssDir,"./dev/index.html","./dev/views/**"], ['sass', browserSync.reload]);
+    gulp.watch([config.jsDir,config.cssDir,"./dev/index.html"], ['sass', browserSync.reload]);
 
 });
