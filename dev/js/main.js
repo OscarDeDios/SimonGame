@@ -5,7 +5,7 @@ var Main = (function() {
     var sequence = [];
     var numberTry = 0;
     var intSeq;
-    var record = 0;
+    var activeLevel = 4;
 
     /* ------------------------------------------------------------------------------------------------*/
     /*                                    Initialize                                                   */
@@ -14,10 +14,12 @@ var Main = (function() {
 
         document.getElementById('play-button').addEventListener('click', playGame);
         document.getElementById('chooseLevel').addEventListener('change', changeLevel);
-        if (localStorage.getItem('record')) {
-            record = localStorage.getItem('record');
-            document.getElementById('record').innerHTML = record;
+        if (localStorage.getItem('level')) {
+            activeLevel = localStorage.getItem('level');
+            changeLevel(null, activeLevel);
+            document.getElementById("chooseLevel").value = activeLevel;
         }
+        document.getElementById('record').innerHTML = getRecords(activeLevel);
     }
 
     /* ------------------------------------------------------------------------------------------------*/
@@ -32,9 +34,14 @@ var Main = (function() {
         addSequence();
     }
 
-    var changeLevel = function() {
-        var level = document.getElementById("chooseLevel").value;
+    var changeLevel = function(evt, level) {
+        if (!level) {
+            level = document.getElementById("chooseLevel").value;
+        }
         numberItems = level;
+        activeLevel = level;
+        document.getElementById('record').innerHTML = getRecords(activeLevel);
+        localStorage.setItem('level', level);
         Utils.removeClass(document.querySelectorAll('.color-target'), 'active');
         Utils.addClass(document.querySelectorAll('.level' + level), 'active');
     }
@@ -75,10 +82,9 @@ var Main = (function() {
             if (numberTry === sequence.length) {
                 document.getElementById('points').innerHTML = numberTry;
             }
-            if (numberTry > record) {
-                record = numberTry;
-                document.getElementById('record').innerHTML = record;
-                localStorage.setItem('record', record);
+            if (numberTry > getRecords(activeLevel)) {
+                setRecords(activeLevel, numberTry);
+                document.getElementById('record').innerHTML = getRecords(activeLevel);
             }
             if (numberTry == sequence.length) {
                 numberTry = 0;
@@ -115,6 +121,17 @@ var Main = (function() {
         }, delay)
     }
 
+    var setRecords = function(level, points) {
+        localStorage.setItem('record' + level, points);
+    }
+
+    var getRecords = function(level) {
+        var record = 0;
+        if (localStorage.getItem('record' + level)) {
+            record = localStorage.getItem('record' + level);
+        }
+        return record;
+    }
 
     return {
         // Public function

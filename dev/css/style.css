@@ -54,7 +54,6 @@ header {
 .game-section {
   margin: 50px auto;
   width: 90%;
-  height: 500px;
   background-color: white;
   box-shadow: 0 2px 7px rgba(2, 67, 4, 0.5);
   padding: 6%;
@@ -106,14 +105,38 @@ header {
     display: none; }
     .color-targets .color-target.active {
       display: inline-block; }
-    .color-targets .color-target.red {
+    .color-targets .color-target#target0 {
       background-color: red; }
-    .color-targets .color-target.yellow {
+    .color-targets .color-target#target1 {
       background-color: #ffa200; }
-    .color-targets .color-target.green {
+    .color-targets .color-target#target2 {
       background-color: green; }
-    .color-targets .color-target.blue {
+    .color-targets .color-target#target3 {
       background-color: blue; }
+    .color-targets .color-target#target4 {
+      background-color: #ff00d7; }
+    .color-targets .color-target#target5 {
+      background-color: #d4ccc0; }
+    .color-targets .color-target#target6 {
+      background-color: #1dff1d; }
+    .color-targets .color-target#target7 {
+      background-color: #00f6ff; }
+    .color-targets .color-target#target8 {
+      background-color: #001931; }
+    .color-targets .color-target#target9 {
+      background-color: #c3447a; }
+    .color-targets .color-target#target10 {
+      background-color: #1dab9c; }
+    .color-targets .color-target#target11 {
+      background-color: #00006d; }
+    .color-targets .color-target#target12 {
+      background-color: #dc003f; }
+    .color-targets .color-target#target13 {
+      background-color: #70d8a7; }
+    .color-targets .color-target#target14 {
+      background-color: #0c0080; }
+    .color-targets .color-target#target15 {
+      background-color: #black; }
     .color-targets .color-target.selected {
       opacity: 1;
       box-shadow: 1px 1px 8px black;

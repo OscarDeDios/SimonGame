@@ -62,7 +62,6 @@ header {
 .game-section {
     margin: 50px auto;
     width: 90%;
-    height: 500px;
     background-color: white;
     box-shadow: 0 2px 7px rgba(2, 67, 4, 0.5);
     padding: 6%;
@@ -123,17 +122,53 @@ header {
         &.active {
             display: inline-block;
         }
-        &.red {
+        &#target0 {
             background-color: red;
         }
-        &.yellow {
+        &#target1 {
             background-color: #ffa200;
         }
-        &.green {
+        &#target2 {
             background-color: green;
         }
-        &.blue {
+        &#target3 {
             background-color: blue;
+        }
+        &#target4 {
+            background-color: #ff00d7;
+        }
+        &#target5 {
+            background-color: #d4ccc0;
+        }
+        &#target6 {
+            background-color: #1dff1d;
+        }
+        &#target7 {
+            background-color: #00f6ff;
+        }
+        &#target8 {
+            background-color: #001931;
+        }
+        &#target9 {
+            background-color: #c3447a;
+        }
+        &#target10 {
+            background-color: #1dab9c;
+        }
+        &#target11 {
+            background-color: #00006d;
+        }
+        &#target12 {
+            background-color: #dc003f;
+        }
+        &#target13 {
+            background-color: #70d8a7;
+        }
+        &#target14 {
+            background-color: #0c0080;
+        }
+        &#target15 {
+            background-color: #black;
         }
         &.selected {
             opacity: 1;
