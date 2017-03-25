@@ -37,7 +37,7 @@ header {
             font-size: 40px;
         }
         @media (max-width: 440px) {
-            font-size: 20px;
+            font-size: 22px;
         }
     }
 }
@@ -71,6 +71,18 @@ header {
     @media (max-width: 670px) {
         margin: 0;
         box-shadow: 0 0 0 rgba(2, 67, 4, 0.5);
+    }
+}
+
+.message {
+    font-size: 27px;
+    color: #10007b;
+    min-height: 32px;
+    display: inline-block;
+    float: left;
+    @media (max-width: 670px) {
+        font-size: 18px;
+        margin-top: 3px;
     }
 }
 
@@ -200,15 +212,6 @@ header {
         box-shadow: inset 2px 3px 40px red;
     }
 }
-.message {
-    font-size: 27px;
-    color: #10007b;
-    min-height: 32px;
-    display: inline-block;
-    @media (max-width: 670px) {
-        font-size: 20px;
-    }
-}
 
 .scoreboard {
     font-size: 22px;
@@ -225,8 +228,6 @@ header {
 button {
     background: #0080d6;
     background-image: linear-gradient(to bottom, #26a5fb, #1b84b9);
-    -webkit-border-radius: 4;
-    -moz-border-radius: 4;
     border-radius: 6px;
     font-family: Arial;
     color: #ffffff;
