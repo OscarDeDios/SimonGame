@@ -1,8 +1,7 @@
 var Main = (function() {
     'use strict';
 
-    var NUMBER_ITEMS = 4
-      ;
+    var numberItems = 4;
     var sequence = [];
     var numberTry = 0;
     var intSeq;
@@ -14,6 +13,7 @@ var Main = (function() {
     var init = function() {
 
         document.getElementById('play-button').addEventListener('click', playGame);
+        document.getElementById('chooseLevel').addEventListener('change', changeLevel);
         if (localStorage.getItem('record')) {
             record = localStorage.getItem('record');
             document.getElementById('record').innerHTML = record;
@@ -30,6 +30,13 @@ var Main = (function() {
         document.querySelector('.color-targets').removeEventListener('mousedown', clickColor);
         document.querySelector('.color-targets').addEventListener('mousedown', clickColor);
         addSequence();
+    }
+
+    var changeLevel = function() {
+        var level = document.getElementById("chooseLevel").value;
+        numberItems = level;
+        Utils.removeClass(document.querySelectorAll('.color-target'), 'active');
+        Utils.addClass(document.querySelectorAll('.level' + level), 'active');
     }
 
     var addSequence = function() {
@@ -58,12 +65,16 @@ var Main = (function() {
         }
 
         if (sequence[numberTry] != item) {
+            // Error!
             document.querySelector('.color-targets').removeEventListener('mousedown', clickColor);
             showMessage("Error! Play again");
             wrongEffect(sequence[numberTry]);
         } else {
+            // OK
             numberTry++;
-            document.getElementById('points').innerHTML = numberTry;
+            if (numberTry === sequence.length) {
+                document.getElementById('points').innerHTML = numberTry;
+            }
             if (numberTry > record) {
                 record = numberTry;
                 document.getElementById('record').innerHTML = record;
@@ -78,7 +89,7 @@ var Main = (function() {
     }
 
     var generateNext = function() {
-        return (Math.floor(Math.random() * NUMBER_ITEMS));
+        return (Math.floor(Math.random() * numberItems));
     }
 
     var clickEffect = function(colorItem) {

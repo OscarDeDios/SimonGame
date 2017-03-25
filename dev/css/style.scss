@@ -113,13 +113,16 @@ header {
         -moz-border-radius: 50px;
         -webkit-border-radius: 50px;
         border-radius: 50px;
-        display: inline-block;
         cursor: pointer;
         opacity: 0.6;
         transition: opacity 200ms;
         transition: box-shadow 500ms;
         box-shadow: 2px 3px 14px black;
+        display: none;
 
+        &.active {
+            display: inline-block;
+        }
         &.red {
             background-color: red;
         }
@@ -136,6 +139,9 @@ header {
             opacity: 1;
             box-shadow: 1px 1px 8px black;
             transform: translateY(2px);
+        }
+        &.hidden {
+            display: none;
         }
         &:active {
           box-shadow: 1px 1px 8px black;

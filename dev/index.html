@@ -15,18 +15,30 @@
             <span class="message" id="message"></span>
             <div class="level">
                 <label>Level:</label>
-                <select>
-                    <option value=0>Easy</option>
-                    <option value=1 selected>Normal</option>
-                    <option value=2>Difficult</option>
-                    <option value=3>Crazy</option>
+                <select id="chooseLevel">
+                    <option value=3>Easy</option>
+                    <option value=4 selected>Normal</option>
+                    <option value=8>Difficult</option>
+                    <option value=16>Crazy</option>
                 </select>
             </div>
             <ul class="color-targets">
-                <li id="target0" class="color-target red" data-item="0">
-                <li id="target1" class="color-target yellow" data-item="1">
-                <li id="target2" class="color-target green" data-item="2">
-                <li id="target3" class="color-target blue" data-item="3">
+                <li id="target0" class="color-target level3 level4 level8 level16 active red"  data-item="0">
+                <li id="target1" class="color-target level3 level4 level8 level16 active yellow" data-item="1">
+                <li id="target2" class="color-target level3 level4 level8 level16 active green" data-item="2">
+                <li id="target3" class="color-target level4 level8 level16 active blue" data-item="3">
+                <li id="target4" class="color-target level8 level16 blue " data-item="4">
+                <li id="target5" class="color-target level8 level16 blue " data-item="5">
+                <li id="target6" class="color-target level8 level16 blue " data-item="6">
+                <li id="target7" class="color-target level8 level16 blue " data-item="7">
+                <li id="target8" class="color-target level16 red " data-item="8">
+                <li id="target9" class="color-target level16 yellow " data-item="9">
+                <li id="target10" class="color-target level16 green " data-item="10">
+                <li id="target11" class="color-target level16 blue " data-item="11">
+                <li id="target12" class="color-target level16 blue " data-item="12">
+                <li id="target13" class="color-target level16 blue " data-item="13">
+                <li id="target14" class="color-target level16 blue " data-item="14">
+                <li id="target15" class="color-target level16 blue " data-item="15">
             </ul>
             <button id="play-button">Play</button>
             <div class="scoreboard">
