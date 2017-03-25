@@ -8,13 +8,13 @@ header {
   height: 85px;
   padding: 20px 0 1px;
   background-color: #f3f3f3;
-  background-image: -moz-linear-gradient(top, #ebebeb, #ffffff);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ebebeb), to(#ffffff));
   background-image: -webkit-linear-gradient(top, #ebebeb, #ffffff);
-  background-image: -o-linear-gradient(top, #ebebeb, #ffffff);
   background-image: linear-gradient(to bottom, #ebebeb, #ffffff);
   background-repeat: repeat-x;
   border-bottom: 1px solid #C0C0C0; }
+  @media (max-width: 500px) {
+    header {
+      height: 45px; } }
   header img {
     margin: 0 50px;
     width: 40%;
@@ -29,7 +29,7 @@ header {
     font-size: 56px;
     color: #004488;
     position: relative;
-    bottom: 10px; }
+    bottom: 8px; }
     @media (max-width: 600px) {
       header h1 {
         font-size: 40px; } }
@@ -39,6 +39,7 @@ header {
 
 .container {
   font-family: "Ubuntu", arial;
+  background: -webkit-linear-gradient(#eaeaea, #bbbbbb);
   background: linear-gradient(#eaeaea, #bbbbbb);
   min-height: calc(100% - 130px);
   margin-bottom: -30px;
@@ -49,15 +50,19 @@ header {
     height: 30px; }
   @media (max-width: 670px) {
     .container {
-      background: linear-gradient(white, white); } }
+      background: -webkit-linear-gradient(white, white);
+      background: linear-gradient(white, white);
+      min-height: calc(100% - 105px);
+      margin-bottom: -10px; } }
 
 .game-section {
-  margin: 50px auto;
+  margin: 40px auto;
   width: 90%;
   background-color: white;
   box-shadow: 0 2px 7px rgba(2, 67, 4, 0.5);
-  padding: 6%;
-  max-width: 650px; }
+  padding: 50px 6%;
+  max-width: 650px;
+  text-align: center; }
   @media (max-width: 670px) {
     .game-section {
       margin: 0;
@@ -65,8 +70,6 @@ header {
 
 .level {
   float: right;
-  bottom: 15px;
-  position: relative;
   font-family: "Ubuntu", arial;
   font-size: 22px;
   color: #808080; }
@@ -80,29 +83,40 @@ header {
     border-radius: 4px;
     outline: 0;
     background: #ccc;
+    background: -webkit-linear-gradient(top, #fff 0, #daeade 100%);
     background: linear-gradient(to bottom, #fff 0, #daeade 100%); }
 
 .color-targets {
   margin: 30px auto;
-  display: block;
+  display: inline-block;
   border: 1px solid #BBBBBB;
   border-radius: 5px;
   box-shadow: 0 1px 6px #a0a0a0;
   padding: 10%;
+  width: 80%;
   background-color: #f3f3f3; }
+  @media (max-width: 520px) {
+    .color-targets {
+      padding: 4%;
+      width: 92%; } }
   .color-targets .color-target {
     width: 80px;
     height: 80px;
     margin: 20px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
     border-radius: 50px;
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.5;
+    -webkit-transition: opacity 200ms;
     transition: opacity 200ms;
+    -webkit-transition: box-shadow 500ms;
     transition: box-shadow 500ms;
-    box-shadow: 2px 3px 14px black;
+    box-shadow: 2px 3px 16px black;
     display: none; }
+    @media (max-width: 520px) {
+      .color-targets .color-target {
+        width: 40px;
+        height: 40px;
+        margin: 15px; } }
     .color-targets .color-target.active {
       display: inline-block; }
     .color-targets .color-target#target0 {
@@ -140,20 +154,27 @@ header {
     .color-targets .color-target.selected {
       opacity: 1;
       box-shadow: 1px 1px 8px black;
-      transform: translateY(2px); }
+      -webkit-transform: translateY(3px);
+              transform: translateY(3px); }
     .color-targets .color-target.hidden {
       display: none; }
     .color-targets .color-target:active {
       box-shadow: 1px 1px 8px black;
-      transform: translateY(2px); }
+      -webkit-transform: translateY(3px);
+              transform: translateY(3px); }
     .color-targets .color-target.wrong {
       box-shadow: 2px 3px 120px yellow; }
+  .color-targets.wrong {
+    box-shadow: inset 2px 3px 40px red; }
 
 .message {
   font-size: 27px;
   color: #10007b;
-  min-height: 30px;
-  display: block; }
+  min-height: 32px;
+  display: inline-block; }
+  @media (max-width: 670px) {
+    .message {
+      font-size: 20px; } }
 
 .scoreboard {
   font-size: 22px;
@@ -167,9 +188,8 @@ header {
 
 button {
   background: #0080d6;
+  background-image: -webkit-linear-gradient(top, #26a5fb, #1b84b9);
   background-image: linear-gradient(to bottom, #26a5fb, #1b84b9);
-  -webkit-border-radius: 4;
-  -moz-border-radius: 4;
   border-radius: 6px;
   font-family: Arial;
   color: #ffffff;
@@ -180,14 +200,19 @@ button {
   float: right; }
   button:hover {
     background: #0086d4;
+    background-image: -webkit-linear-gradient(top, #0086d4, #3498db);
     background-image: linear-gradient(to bottom, #0086d4, #3498db);
     text-decoration: none; }
 
 footer {
   height: 30px;
   padding: 20px;
-  background-color: #373737;
-  color: white; }
+  background-color: #373737; }
+  footer a {
+    color: white;
+    text-decoration: none; }
+    footer a:visited {
+      color: white; }
 
 li {
   list-style: none; }

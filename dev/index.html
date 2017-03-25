@@ -1,6 +1,7 @@
 <html>
 <head>
-    <link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Yanone+Kaffeesatz:400,200,300,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Yanone+Kaffeesatz:400,200,300,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body onload="Main.init()">
@@ -22,7 +23,7 @@
                     <option value=16>Crazy</option>
                 </select>
             </div>
-            <ul class="color-targets">
+            <ul id="color-targets" class="color-targets">
                 <li id="target0" class="color-target level3 level4 level8 level16 active"  data-item="0">
                 <li id="target1" class="color-target level3 level4 level8 level16 active" data-item="1">
                 <li id="target2" class="color-target level3 level4 level8 level16 active" data-item="2">
@@ -46,13 +47,13 @@
                 <span id="points">0</span>
             </div>
             <div class="scoreboard">
-                Record:
+                Best:
                 <span id="record">0</span>
             </div>
         </section>
     </section>
 
-    <footer>by Oscar de Dios</footer>
+    <footer><a href="https://github.com/OscarDeDios/SimonGame" target="_blank">by Oscar de Dios</a></footer>
     <script src="js/utils.js"></script>
 	<script src="js/main.js"></script>
 </body>

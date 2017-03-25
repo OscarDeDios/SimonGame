@@ -42,6 +42,8 @@ var Main = (function() {
         activeLevel = level;
         document.getElementById('record').innerHTML = getRecords(activeLevel);
         localStorage.setItem('level', level);
+        showMessage('');
+        document.getElementById('points').innerHTML = '0';
         Utils.removeClass(document.querySelectorAll('.color-target'), 'active');
         Utils.addClass(document.querySelectorAll('.level' + level), 'active');
     }
@@ -103,14 +105,20 @@ var Main = (function() {
     }
 
     var wrongEffect = function(colorItem) {
-        showEffect(colorItem, 'wrong', 700);
+        showEffect(colorItem, 'wrong', 1000, true);
     }
 
-    var showEffect = function(colorItem, className, delay) {
+    var showEffect = function(colorItem, className, delay, wrong) {
         Utils.addClass(document.getElementById('target' + colorItem), className);
         setTimeout(function() {
             Utils.removeClass(document.getElementById('target' + colorItem), className);
         }, delay);
+        if (wrong) {
+            Utils.addClass(document.getElementById('color-targets'), className);
+            setTimeout(function() {
+                Utils.removeClass(document.getElementById('color-targets'), className);
+            }, delay*2);
+        }
     }
 
 
