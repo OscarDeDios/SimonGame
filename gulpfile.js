@@ -60,6 +60,7 @@ gulp.task('dev', function() {
     });
 
 
-    gulp.watch([config.jsDir,config.cssDir,"./dev/index.html"], ['sass', browserSync.reload]);
+    gulp.watch([config.jsDir,"./dev/index.html"], browserSync.reload);
+    gulp.watch([config.cssDir], ['sass', browserSync.reload]);
 
 });
