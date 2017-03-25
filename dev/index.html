@@ -12,7 +12,16 @@
 
     <section class="container">
         <section class="game-section">
-            <span id="message"></span>
+            <span class="message" id="message"></span>
+            <div class="level">
+                <label>Level:</label>
+                <select>
+                    <option value=0>Easy</option>
+                    <option value=1 selected>Normal</option>
+                    <option value=2>Difficult</option>
+                    <option value=3>Crazy</option>
+                </select>
+            </div>
             <ul class="color-targets">
                 <li id="target0" class="color-target red" data-item="0">
                 <li id="target1" class="color-target yellow" data-item="1">
@@ -20,12 +29,12 @@
                 <li id="target3" class="color-target blue" data-item="3">
             </ul>
             <button id="play-button">Play</button>
-            <div class="points">
-                Points
+            <div class="scoreboard">
+                Points:
                 <span id="points">0</span>
             </div>
-            <div class="points">
-                Record
+            <div class="scoreboard">
+                Record:
                 <span id="record">0</span>
             </div>
         </section>

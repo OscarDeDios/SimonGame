@@ -1,7 +1,8 @@
 var Main = (function() {
     'use strict';
 
-    var NUMBER_ITEMS = 4;
+    var NUMBER_ITEMS = 4
+      ;
     var sequence = [];
     var numberTry = 0;
     var intSeq;
@@ -26,8 +27,8 @@ var Main = (function() {
         sequence = [];
         numberTry = 0;
         document.getElementById('points').innerHTML = numberTry;
-        document.querySelector('.color-targets').removeEventListener('click', clickColor);
-        document.querySelector('.color-targets').addEventListener('click', clickColor);
+        document.querySelector('.color-targets').removeEventListener('mousedown', clickColor);
+        document.querySelector('.color-targets').addEventListener('mousedown', clickColor);
         addSequence();
     }
 
@@ -44,19 +45,22 @@ var Main = (function() {
             i++;
             if (i === sequence.length) {
                 clearInterval(intSeq);
-                showMessage("TRY");
+                showMessage("Try", 300);
             }
         }, 800);
     }
 
     var clickColor = function(evt) {
         var item = evt.target.dataset.item;
-        console.log(item);
-        console.log(sequence);
+        if (!item) {
+            // click outside a color
+            return;
+        }
 
         if (sequence[numberTry] != item) {
-            document.querySelector('.color-targets').removeEventListener('click', clickColor);
-            showMessage("Error!, play again");
+            document.querySelector('.color-targets').removeEventListener('mousedown', clickColor);
+            showMessage("Error! Play again");
+            wrongEffect(sequence[numberTry]);
         } else {
             numberTry++;
             document.getElementById('points').innerHTML = numberTry;
@@ -78,14 +82,26 @@ var Main = (function() {
     }
 
     var clickEffect = function(colorItem) {
-        Utils.addClass(document.getElementById('target' + colorItem), 'selected');
-        setTimeout(function() {
-            Utils.removeClass(document.getElementById('target' + colorItem), 'selected');
-        }, 300);
+        showEffect(colorItem, 'selected', 300);
     }
 
-    var showMessage = function(message) {
-        document.getElementById('message').innerHTML = message;
+    var wrongEffect = function(colorItem) {
+        showEffect(colorItem, 'wrong', 700);
+    }
+
+    var showEffect = function(colorItem, className, delay) {
+        Utils.addClass(document.getElementById('target' + colorItem), className);
+        setTimeout(function() {
+            Utils.removeClass(document.getElementById('target' + colorItem), className);
+        }, delay);
+    }
+
+
+    var showMessage = function(message, delay) {
+        delay = delay || 0;
+        setTimeout(function(){
+            document.getElementById('message').innerHTML = message;
+        }, delay)
     }
 
 
